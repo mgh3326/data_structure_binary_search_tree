@@ -3,11 +3,10 @@
 
 class BinSrchTree : public BinaryTree
 {
-public :
+public:
 	BinSrchTree(void) {}
 	BinSrchTree(void) {}
 
-	//이진 탐색 트리의 탐색 연산
 	void remove(BinaryNode *parent, BinaryNode *node) {
 		//case 1: 삭제하려는 노드가 단말 노드 일 경우
 		if (node->isLeaf()) {
@@ -24,7 +23,7 @@ public :
 				}
 			}
 		}
-			//case2:삭제하려는 노드가 왼쪽이나 오른쪽 자식만 갖는 경우
+		//case2:삭제하려는 노드가 왼쪽이나 오른쪽 자식만 갖는 경우
 		else if (node->getLeft() == NULL || node->getRight() == NULL) {
 			//삭제할 노드의 유일한 자식 노드 =>child
 			BinaryNode *child = (node->getLeft() != NULL) ? node->getLeft() : node->getRight;//삭제할 노드가 루트이면 ==>chlid가 새로운 root가 됨
@@ -59,6 +58,8 @@ public :
 		}
 		delete node;
 	}
+	//이진 탐색 트리의 탐색 연산
+
 	//이진 탐색 트리의 삽입 연산
 
 	//이진 탐색 트리의 삭제 연산
